@@ -53,10 +53,3 @@ class SignupPageView(View):
             return redirect('authentication:feed')
         return render(request, self.template_name, {'form': form})
 
-# Feed view
-class FeedPageView(LoginRequiredMixin, View):
-    template_name = 'authentication/feed.html'
-    login_url = 'authentication:login'
-
-    def get(self, request):
-        return render(request, self.template_name)
